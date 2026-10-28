@@ -1,0 +1,378 @@
+/* RedFox Labs: watercolor on warm paper, deep ink. */
+
+:root {
+  --paper: #e9e1d3;
+  --paper-deep: #ded3c1;
+  --ink: #2a1c1e;
+  --ink-soft: #5b4a47;
+  --fox: #8b1e2d;
+  --fox-bright: #a8293a;
+  --night: #1e1517;
+  --night-text: #e9dfd2;
+
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'Figtree', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --measure: 34rem;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+/* Cold-press paper grain over everything */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.38;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.45 0 0 0 0 0.38 0 0 0 0 0.3 0 0 0 0.55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.defs { position: absolute; width: 0; height: 0; }
+
+a { color: inherit; }
+
+::selection { background: var(--fox); color: var(--paper); }
+
+/* ---------- Header ---------- */
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 1.75rem 2rem;
+}
+
+.wordmark {
+  font-family: var(--serif);
+  font-variation-settings: "SOFT" 100, "opsz" 48;
+  font-weight: 600;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: var(--fox);
+  letter-spacing: -0.01em;
+}
+.wordmark span { color: var(--ink); font-weight: 400; }
+
+.top nav { display: flex; gap: 1.75rem; }
+.top nav a {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+.top nav a:hover { color: var(--fox); }
+
+/* ---------- Hero ---------- */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 2rem;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 2rem 2rem 5rem;
+}
+
+h1 {
+  font-family: var(--serif);
+  font-variation-settings: "SOFT" 100, "opsz" 144;
+  font-weight: 400;
+  font-size: clamp(3.2rem, 7.5vw, 6.5rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.75rem;
+}
+h1 em { color: var(--fox); font-style: italic; }
+
+.lede {
+  font-size: 1.3rem;
+  line-height: 1.55;
+  max-width: var(--measure);
+  color: var(--ink-soft);
+  margin-bottom: 2rem;
+}
+
+.hero-cta {
+  font-weight: 600;
+  color: var(--fox);
+  text-decoration: none;
+  border-bottom: 2px solid currentColor;
+  padding-bottom: 2px;
+}
+.hero-cta:hover { color: var(--fox-bright); }
+
+/* The white of the scan drops out against the paper */
+.hero-fox img {
+  display: block;
+  width: 100%;
+  max-width: 30rem;
+  height: auto;
+  margin-left: auto;
+  mix-blend-mode: multiply;
+  filter: contrast(1.04) saturate(1.05);
+}
+
+/* ---------- Projects ---------- */
+
+.projects {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 2rem 2rem 6rem;
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-variation-settings: "SOFT" 100, "opsz" 96;
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--fox);
+  margin-bottom: 3rem;
+}
+
+.project {
+  display: grid;
+  grid-template-columns: 22rem 1fr;
+  gap: 3.5rem;
+  align-items: start;
+  padding: 3.5rem 0;
+  border-top: 1px solid rgba(42, 28, 30, 0.14);
+}
+.project:nth-of-type(even) { grid-template-columns: 1fr 22rem; }
+.project:nth-of-type(even) .plate { order: 2; }
+
+/* Watercolor wash: a soft blot with bled edges and darker pooled rim.
+   This is a stand-in until real screenshots go here. */
+.plate {
+  position: relative;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+}
+.blot {
+  position: absolute;
+  inset: 8%;
+  border-radius: 46% 54% 52% 48% / 52% 44% 56% 48%;
+  background:
+    radial-gradient(circle at 34% 30%, color-mix(in srgb, var(--wash-2) 55%, transparent) 0 22%, transparent 48%),
+    radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--wash) 38%, transparent) 0 52%, color-mix(in srgb, var(--wash) 82%, transparent) 70%, transparent 72%);
+  filter: url(#bleed);
+  mix-blend-mode: multiply;
+  opacity: 0.9;
+}
+.glyph {
+  position: relative;
+  font-family: var(--serif);
+  font-variation-settings: "SOFT" 100, "opsz" 144;
+  font-size: 6rem;
+  line-height: 1;
+  color: var(--paper);
+  opacity: 0.92;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.kind {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--wash);
+  margin-bottom: 0.4rem;
+}
+
+.project h3 {
+  font-family: var(--serif);
+  font-variation-settings: "SOFT" 100, "opsz" 144;
+  font-weight: 500;
+  font-size: clamp(2.6rem, 5vw, 3.8rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
+}
+
+.project-body > p:not(.kind):not(.note) {
+  max-width: var(--measure);
+  margin-bottom: 1rem;
+}
+
+.get {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+  margin-top: 1.75rem;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--wash);
+  color: #fbf6ee;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.7rem 1.3rem;
+  border-radius: 999px 999px 999px 999px / 860px 999px 900px 999px;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+.btn:hover { transform: translateY(-1px); filter: brightness(1.08); }
+
+.or { color: var(--ink-soft); font-size: 0.95rem; }
+.or a { color: var(--fox); font-weight: 500; }
+
+.cmd {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 40rem;
+  margin-top: 1.1rem;
+  padding: 0.6rem 0.6rem 0.6rem 1rem;
+  background: var(--paper-deep);
+  border-radius: 10px;
+}
+.cmd code {
+  flex: 1;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  overflow-x: auto;
+  white-space: nowrap;
+  color: var(--ink);
+}
+.cmd button {
+  font: 600 0.8rem var(--sans);
+  background: none;
+  border: 1px solid rgba(42, 28, 30, 0.25);
+  color: var(--ink);
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.cmd button:hover { border-color: var(--fox); color: var(--fox); }
+
+.note {
+  margin-top: 0.9rem;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+/* ---------- About (the dark ink section) ---------- */
+
+.us {
+  background: var(--night);
+  color: var(--night-text);
+  position: relative;
+  overflow: hidden;
+}
+.us::before {
+  /* a faint red wash bleeding in from the corner */
+  content: "";
+  position: absolute;
+  width: 46rem;
+  height: 46rem;
+  right: -14rem;
+  top: -18rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(139, 30, 45, 0.55), rgba(139, 30, 45, 0) 65%);
+  filter: url(#bleed);
+}
+.us-inner {
+  position: relative;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+}
+.us .section-title { color: #e07a6c; }
+.us p {
+  max-width: 38rem;
+  font-size: 1.2rem;
+  margin-bottom: 1.1rem;
+}
+
+.people {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2.5rem;
+  margin-top: 2.5rem;
+}
+.people a {
+  font-family: var(--serif);
+  font-variation-settings: "SOFT" 100, "opsz" 72;
+  font-size: 1.6rem;
+  text-decoration: none;
+}
+.people a span {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  color: #a8968f;
+  margin-left: 0.35rem;
+}
+.people a:hover { color: #e07a6c; }
+
+/* ---------- Footer ---------- */
+
+.foot {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  background: var(--night);
+  color: #8d7c76;
+  font-size: 0.9rem;
+  padding: 1.5rem 2rem 2rem;
+  border-top: 1px solid rgba(233, 223, 210, 0.08);
+}
+
+/* ---------- Toast ---------- */
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 2rem;
+  transform: translate(-50%, 1rem);
+  background: var(--ink);
+  color: var(--paper);
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 500;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 200;
+}
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 820px) {
+  .hero { grid-template-columns: 1fr; padding-bottom: 3rem; }
+  .hero-fox { order: -1; }
+  .hero-fox img { max-width: 16rem; margin: 0 auto; }
+  .project,
+  .project:nth-of-type(even) { grid-template-columns: 1fr; gap: 1.5rem; }
+  .project:nth-of-type(even) .plate { order: 0; }
+  .plate { max-width: 15rem; }
+  .glyph { font-size: 4.5rem; }
+  .foot { flex-direction: column; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn, .toast { transition: none; }
+}
