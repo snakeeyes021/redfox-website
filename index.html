@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RedFox Labs</title>
-  <meta name="description" content="RedFox Labs is two brothers making music, games, and the software we wish already existed.">
+  <meta name="description"
+    content="RedFox Labs is two brothers making music, games, and the software we wish already existed.">
   <meta name="theme-color" content="#e9e1d3">
 
   <meta property="og:type" content="website">
@@ -15,17 +17,20 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,100;1,9..144,300..700,100&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,100;1,9..144,300..700,100&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap"
+    rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <!-- Watercolor filters: wobbly pigment edges + paper grain -->
   <svg class="defs" aria-hidden="true" focusable="false">
     <filter id="bleed" x="-20%" y="-20%" width="140%" height="140%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="4" seed="7" result="noise"/>
-      <feDisplacementMap in="SourceGraphic" in2="noise" scale="46" xChannelSelector="R" yChannelSelector="G"/>
-      <feGaussianBlur stdDeviation="1.4"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="4" seed="7" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="46" xChannelSelector="R" yChannelSelector="G" />
+      <feGaussianBlur stdDeviation="1.4" />
     </filter>
   </svg>
 
@@ -49,7 +54,8 @@
         <a href="#projects" class="hero-cta">See what we've made ↓</a>
       </div>
       <figure class="hero-fox">
-        <img src="assets/nine-tailed-fox.jpg" alt="A nine-tailed fox painted in deep red watercolor" width="896" height="1200">
+        <img src="assets/nine-tailed-fox.jpg" alt="A nine-tailed fox painted in deep red watercolor" width="896"
+          height="1200">
       </figure>
     </section>
 
@@ -67,7 +73,7 @@
             Dorico is a wonderful piece of notation software that doesn't officially run on Linux.
             Under Wine it actually runs fine. The hard part is getting past the installers, account
             logins and license handoffs. Torquio automates all of that, reproducibly, inside a
-            Distrobox container so your system stays clean.
+            Distrobox container so you can focus on making music.
           </p>
           <div class="get">
             <a class="btn" href="https://github.com/snakeeyes021/torquio">View on GitHub</a>
@@ -99,9 +105,11 @@
           </div>
           <div class="cmd">
             <code>rpm-ostree rebase ostree-image-signed:docker://ghcr.io/snakeeyes021/redfox-os:latest</code>
-            <button type="button" data-copy="rpm-ostree rebase ostree-image-signed:docker://ghcr.io/snakeeyes021/redfox-os:latest">Copy</button>
+            <button type="button"
+              data-copy="rpm-ostree rebase ostree-image-signed:docker://ghcr.io/snakeeyes021/redfox-os:latest">Copy</button>
           </div>
-          <p class="note">Rebase from a GNOME-based Universal Blue system. Nvidia users, see the install notes for your image.</p>
+          <p class="note">Rebase from a GNOME-based Universal Blue system. Nvidia users, see the install notes for your
+            image.</p>
         </div>
       </article>
 
@@ -111,10 +119,12 @@
           <p class="kind">MIDI player · For keyboardists</p>
           <h3>Pianola</h3>
           <p>
-            You noodled at the keyboard for an hour and played one great idea somewhere in the
-            middle. Pianola finds it without making you open a whole DAW. Scrub through MIDI by ear,
-            jump between phrases, select the good part and drag it straight into Bitwig, Reaper,
-            Ardour or your notation editor.
+            It's a midi player. Nice and simple. It felt like there weren't any good, clean, and
+            modern midi players out there for Linux, so we made one. It's got a few neat little
+            features that we think stand out. It shows markers on the piano roll view, it can
+            flip between multi-channel and piano reduction view, it'll let you scrub the audio
+            with ctrl-space just like engraving software, and it's got decent sounds (FluidSynth),
+            among a few other things.
           </p>
           <p>
             On RedFox OS it pairs with Midikeep, which quietly records everything you play. Pianola
@@ -133,13 +143,13 @@
           <p class="kind">Personal assistant · Day planner</p>
           <h3>Thirties</h3>
           <p>
-            People naturally work in half-hour chunks. If alien anthropologists studied us without
-            knowing about clocks, they'd decide our unit of time was thirty minutes. Thirties takes
-            that seriously: it lays your day out as thirties between sunrise and sunset, not as clock times.
+            Humans naturally live in half-hour chunks. If alien anthropologists studied us without
+            knowing about clocks, they'd decide our unit of time was thirty minutes. Thirties starts
+            there: it lays your day out as "thirties" between sunrise and sunset, not as clock times.
           </p>
           <p>
             You plan the day with it in plain conversation. It keeps your to-do list and schedule,
-            moves only what needs moving when the day goes sideways, helps with long-term planning,
+            moves only what needs moving when plans gang aft agley, helps with long-term planning,
             and can text you on Telegram. Think of it as the off-gridder's Siri. It's heading toward
             running entirely on your own machine.
           </p>
@@ -179,4 +189,5 @@
   <div class="toast" id="toast" role="status" aria-live="polite">Copied</div>
   <script src="script.js"></script>
 </body>
+
 </html>
