@@ -272,6 +272,124 @@ h1 em { color: var(--fox); font-style: italic; }
   color: var(--ink-soft);
 }
 
+/* ---------- Games page ---------- */
+
+.top nav a[aria-current="page"] { color: var(--fox); }
+
+.lede a { color: var(--fox); }
+
+.page-intro {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 2rem 2rem 1rem;
+}
+.page-intro h1 { margin-bottom: 1.25rem; }
+
+.games { padding-top: 0; }
+
+/* A game's own icon, sitting in the wash */
+.plate .icon {
+  position: relative;
+  width: 58%;
+  height: auto;
+  border-radius: 18%;
+  box-shadow: 0 6px 18px rgba(42, 28, 30, 0.22);
+}
+
+.shot {
+  max-width: 40rem;
+  margin: 1.75rem 0 0;
+}
+.shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(42, 28, 30, 0.18);
+}
+
+/* ---------- The Games card on the homepage ---------- */
+
+/* The plate: two little cards dropped onto the wash */
+.deck {
+  position: relative;
+  width: 64%;
+  aspect-ratio: 1;
+}
+.deck > * {
+  position: absolute;
+  width: 68%;
+  aspect-ratio: 1;
+  border-radius: 16%;
+  box-shadow: 0 8px 20px rgba(42, 28, 30, 0.25);
+  transition: transform 0.35s ease;
+}
+.deck img { left: 0; top: 4%; height: auto; transform: rotate(-8deg); object-fit: cover; }
+.deck .sun-card {
+  right: 0; bottom: 2%;
+  transform: rotate(7deg);
+  background: var(--paper);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.sun-card .blot { inset: 10%; --wash: #b07a1f; --wash-2: #7a2d3a; }
+.sun-card .glyph { font-size: 3.6rem; }
+.project:hover .deck img { transform: rotate(-13deg) translate(-6%, -4%); }
+.project:hover .deck .sun-card { transform: rotate(12deg) translate(6%, 4%); }
+
+.game-list {
+  list-style: none;
+  max-width: 36rem;
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 0.9rem;
+}
+.game-list a {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+  gap: 1rem;
+  align-items: center;
+  text-decoration: none;
+  padding: 0.6rem;
+  margin: -0.6rem;
+  border-radius: 12px;
+  transition: background 0.2s ease;
+}
+.game-list a:hover { background: rgba(42, 28, 30, 0.05); }
+.game-list .thumb {
+  width: 6.5rem;
+  aspect-ratio: 16 / 10;
+  border-radius: 8px;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+.game-list .thumb.soon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  background: var(--paper-deep);
+  overflow: hidden;
+}
+.thumb.soon .blot { inset: 6% 22%; --wash: #b07a1f; --wash-2: #7a2d3a; filter: url(#bleed-sm); }
+.thumb.soon .glyph { font-size: 1.8rem; }
+.game-list strong {
+  display: block;
+  font-family: var(--serif);
+  font-variation-settings: "SOFT" 100, "opsz" 72;
+  font-weight: 500;
+  font-size: 1.35rem;
+  line-height: 1.15;
+}
+.game-list span { display: block; color: var(--ink-soft); font-size: 0.95rem; line-height: 1.45; }
+.game-list em { font-style: normal; font-weight: 600; color: var(--wash); }
+
+@media (max-width: 820px) {
+  .game-list a { grid-template-columns: 5rem 1fr; }
+  .game-list .thumb { width: 5rem; }
+}
+
 /* ---------- About (the dark ink section) ---------- */
 
 .us {
@@ -372,7 +490,13 @@ h1 em { color: var(--fox); font-style: italic; }
   .foot { flex-direction: column; }
 }
 
+@media (max-width: 480px) {
+  .top { flex-wrap: wrap; gap: 0.5rem 1rem; padding: 1.5rem 2rem; }
+  .wordmark, .top nav a { white-space: nowrap; }
+  .top nav { gap: 1.1rem; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .btn, .toast { transition: none; }
+  .btn, .toast, .deck > *, .game-list a { transition: none; }
 }

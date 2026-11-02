@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Games · RedFox Labs</title>
+  <meta name="description" content="The games RedFox Labs is making: Sky Barons, which you can play in your browser, and Lords of Sola, coming soon.">
+  <meta name="theme-color" content="#e9e1d3">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://redfoxlabs.tech/games/">
+  <meta property="og:title" content="Games · RedFox Labs">
+  <meta property="og:description" content="The games two brothers are making. Sky Barons is playable in your browser, and Lords of Sola is on the way.">
+  <meta property="og:image" content="https://redfoxlabs.tech/assets/sky-barons.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,100;1,9..144,300..700,100&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+  <!-- Watercolor filters: wobbly pigment edges + paper grain -->
+  <svg class="defs" aria-hidden="true" focusable="false">
+    <filter id="bleed" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="4" seed="7" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="46" xChannelSelector="R" yChannelSelector="G" />
+      <feGaussianBlur stdDeviation="1.4" />
+    </filter>
+  </svg>
+
+  <header class="top">
+    <a href="../" class="wordmark">RedFox <span>Labs</span></a>
+    <nav>
+      <a href="../#projects">Projects</a>
+      <a href="./" aria-current="page">Games</a>
+      <a href="../#us">About us</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-intro">
+      <h1><em>Games</em></h1>
+      <p class="lede">
+        Remember those old websites packed wall to wall with free games (Newgrounds, GameHippo,
+        anyone)? Because we sure do! These are the games we're making. Both are written in
+        <a href="https://sloppy-lang.org/">Sloppy</a>, a small language built for making games.
+      </p>
+    </section>
+
+    <section class="projects games">
+      <!-- To add a game: copy an <article>, change the --wash color, fill it in.
+           A game we host ourselves lives in games/<name>/index.html (see games/lords-of-sola/README.md). -->
+
+      <article class="project" id="sky-barons" style="--wash: #3d6f8f; --wash-2: #b5523b;">
+        <div class="plate" aria-hidden="true">
+          <span class="blot"></span>
+          <img class="icon" src="../assets/sky-barons-icon.png" alt="" width="256" height="256">
+        </div>
+        <div class="project-body">
+          <p class="kind">Multiplayer air combat · Play in your browser</p>
+          <h3>Sky Barons</h3>
+          <p>
+            The Great War in the air, if the Great War had gone a little differently. Red and Blue
+            each have an airfield full of scouts, fighters, bombers and zeppelins, plus a few
+            stranger things: a rocket pack, a pedal-powered ornithopter, da Vinci's aerial screw.
+          </p>
+          <p>
+            You start on foot beside your side's parked planes. Walk to one, climb in and take off down
+            the strip. When it goes wrong, bail out under a parachute. Or land, get out, and take another
+            plane, even one of theirs: its colors fool their side until you start shooting. A bomber's
+            guns are manned by your friends or by its crew.
+          </p>
+          <p>
+            Fights are dogfights, base attacks, capture the flag, and missions like a trench run up a
+            gorge or escorting bombers to a factory. Up to 64 a side, with the computer flying
+            whatever seats people don't. Make a room and send friends the link, play with anybody, or
+            practice on your own.
+          </p>
+          <figure class="shot">
+            <img src="../assets/sky-barons.jpg" alt="Flying a red triplane over patchwork farmland toward snowy mountains"
+              width="1280" height="720" loading="lazy">
+          </figure>
+          <div class="get">
+            <a class="btn" href="https://sloppy-lang.org/examples/skybarons/">Play Sky Barons</a>
+            <span class="or">or read <a href="https://github.com/david-andrew/sloppy-lang/tree/master/examples/skybarons">the source</a></span>
+          </div>
+          <p class="note">It runs in the browser, keyboard and mouse or a gamepad. Phones get touch controls.</p>
+        </div>
+      </article>
+
+      <article class="project" id="lords-of-sola" style="--wash: #b07a1f; --wash-2: #7a2d3a;">
+        <div class="plate" aria-hidden="true"><span class="blot"></span><span class="glyph">☼</span></div>
+        <div class="project-body">
+          <p class="kind">Strategy and action · Coming soon</p>
+          <h3>Lords of Sola</h3>
+          <p>
+            Still in the making. Sola is a broken land under a sun that never quite sets,
+            and its lords fight over the Sunwells, springs of light that pay for armies.
+          </p>
+          <p>
+            Each team has one commander, who plays it as a real-time strategy game from above: building
+            the base, spending the team's income, training squads and giving orders. Everyone else on
+            the team fights on the ground as one soldier in one of those squads. The plan only works if
+            the soldiers carry it out, and the soldiers only win if the plan is good. Bots fill any seat
+            nobody's in, the commander's included.
+          </p>
+          <p class="note">Not playable yet. We'll put it here once we've played it enough to be happy with it.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>RedFox Labs, LLC</span>
+    <span>redfoxlabs.tech</span>
+  </footer>
+</body>
+
+</html>

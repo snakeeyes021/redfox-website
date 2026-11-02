@@ -32,12 +32,18 @@
       <feDisplacementMap in="SourceGraphic" in2="noise" scale="46" xChannelSelector="R" yChannelSelector="G" />
       <feGaussianBlur stdDeviation="1.4" />
     </filter>
+    <filter id="bleed-sm" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="3" seed="7" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="12" xChannelSelector="R" yChannelSelector="G" />
+      <feGaussianBlur stdDeviation="0.6" />
+    </filter>
   </svg>
 
   <header class="top">
     <a href="#" class="wordmark">RedFox <span>Labs</span></a>
     <nav>
       <a href="#projects">Projects</a>
+      <a href="games/">Games</a>
       <a href="#us">About us</a>
     </nav>
   </header>
@@ -47,7 +53,7 @@
       <div class="hero-text">
         <h1>Hi. We're <em>RedFox</em>.</h1>
         <p class="lede">
-          Two brothers who write music, make games, and build the software we wish
+          Two brothers who write music, <a href="games/">make games</a>, and build the software we wish
           already existed. Most of it runs on Linux. A lot of it is for musicians.
           All of it is free and open source.
         </p>
@@ -161,6 +167,42 @@
           <p class="note">Early alpha. Expect rough edges.</p>
         </div>
       </article>
+
+      <article class="project" id="games" style="--wash: #3d6f8f; --wash-2: #b5523b;">
+        <div class="plate" aria-hidden="true">
+          <span class="blot"></span>
+          <div class="deck">
+            <img src="assets/sky-barons-icon.png" alt="" width="256" height="256">
+            <div class="sun-card"><span class="blot"></span><span class="glyph">☼</span></div>
+          </div>
+        </div>
+        <div class="project-body">
+          <p class="kind">Games · Written in Sloppy</p>
+          <h3>Games</h3>
+          <p>
+            Remember those old websites packed wall to wall with free games (Newgrounds, GameHippo,
+            anyone)? Because we sure do! We make games too. Both of these are written in Sloppy, a small
+            language built for making games.
+          </p>
+          <ul class="game-list">
+            <li><a href="games/#sky-barons">
+              <img class="thumb" src="assets/sky-barons.jpg" alt="" width="1280" height="720">
+              <div><strong>Sky Barons</strong>
+                <span>Air combat in a Great War that went a little differently. Up to 64 a side.
+                  <em>Play it in your browser.</em></span></div>
+            </a></li>
+            <li><a href="games/#lords-of-sola">
+              <div class="thumb soon" aria-hidden="true"><span class="blot"></span><span class="glyph">☼</span></div>
+              <div><strong>Lords of Sola</strong>
+                <span>One player commands the army from above, everyone else fights in its squads.
+                  <em>Coming soon.</em></span></div>
+            </a></li>
+          </ul>
+          <div class="get">
+            <a class="btn" href="games/">See our games</a>
+          </div>
+        </div>
+      </article>
     </section>
 
     <section id="us" class="us">
@@ -172,7 +214,7 @@
           ourselves first, then share them in case they help you too.
         </p>
         <p>
-          More is on the way: more software, and eventually the music and games too.
+          More is on the way: more software, more <a href="games/">games</a>, and eventually the music too.
         </p>
         <ul class="people">
           <li><a href="https://github.com/snakeeyes021">Matt <span>@snakeeyes021</span></a></li>
