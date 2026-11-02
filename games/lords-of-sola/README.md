@@ -4,8 +4,8 @@ This folder is the game's home on the site: **https://redfoxlabs.tech/games/lord
 The game's `WEB_PAGE` constant (in `game.jo`) already points here, so desktop builds' invite
 links open this address.
 
-It's empty on purpose. The game isn't published until Matt has play-tested it and is happy to make
-it public. Until then the Games page only shows a "coming soon" card.
+It's empty on purpose. The game isn't published until it has been play-tested and we're happy to
+make it public. Until then the Games page only shows a "coming soon" card.
 
 ## Publishing it
 
