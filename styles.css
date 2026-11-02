@@ -272,6 +272,42 @@ h1 em { color: var(--fox); font-style: italic; }
   color: var(--ink-soft);
 }
 
+/* ---------- Games page ---------- */
+
+.top nav a[aria-current="page"] { color: var(--fox); }
+
+.lede a { color: var(--fox); }
+
+.page-intro {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 2rem 2rem 1rem;
+}
+.page-intro h1 { margin-bottom: 1.25rem; }
+
+.games { padding-top: 0; }
+
+/* A game's own icon, sitting in the wash */
+.plate .icon {
+  position: relative;
+  width: 58%;
+  height: auto;
+  border-radius: 18%;
+  box-shadow: 0 6px 18px rgba(42, 28, 30, 0.22);
+}
+
+.shot {
+  max-width: 40rem;
+  margin: 1.75rem 0 0;
+}
+.shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(42, 28, 30, 0.18);
+}
+
 /* ---------- About (the dark ink section) ---------- */
 
 .us {
@@ -370,6 +406,12 @@ h1 em { color: var(--fox); font-style: italic; }
   .plate { max-width: 15rem; }
   .glyph { font-size: 4.5rem; }
   .foot { flex-direction: column; }
+}
+
+@media (max-width: 480px) {
+  .top { flex-wrap: wrap; gap: 0.5rem 1rem; padding: 1.5rem 2rem; }
+  .wordmark, .top nav a { white-space: nowrap; }
+  .top nav { gap: 1.1rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
