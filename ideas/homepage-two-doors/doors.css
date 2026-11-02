@@ -1,0 +1,165 @@
+/* Styles for this idea only. If it is ever used, these move into styles.css. */
+
+.mock-label {
+  position: fixed;
+  top: 0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 300;
+  background: var(--ink);
+  color: var(--paper);
+  font: 600 0.8rem var(--sans);
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.mock-label a { color: #e07a6c; margin-left: 0.6rem; }
+
+/* ===== Option B: two doors, Games and Projects ===== */
+
+.doors {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 2rem 2rem 6rem;
+}
+.door-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.door {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 34rem;
+  padding: 2.25rem 2.25rem 2rem;
+  border-radius: 22px 28px 20px 26px / 26px 20px 28px 22px;
+  background: color-mix(in srgb, var(--paper-deep) 70%, var(--paper));
+  text-decoration: none;
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.door:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(42, 28, 30, 0.14); }
+.door > .blot {
+  inset: auto -24% -36% auto;
+  width: 70%;
+  aspect-ratio: 1;
+  opacity: 0.4;
+  z-index: -1;
+  transition: transform 0.6s ease;
+}
+.door:hover > .blot { transform: scale(1.08) rotate(6deg); }
+.door .kind { margin-bottom: 0.2rem; }
+.door h3 {
+  font-family: var(--serif);
+  font-variation-settings: "SOFT" 100, "opsz" 144;
+  font-weight: 500;
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.8rem;
+}
+.door p.blurb { color: var(--ink-soft); max-width: 26rem; }
+.door .more {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  font-weight: 600;
+  color: var(--wash);
+}
+.door .more::after { content: " →"; display: inline-block; transition: transform 0.2s ease; }
+.door:hover .more::after { transform: translateX(4px); }
+
+/* Games door: a fanned hand of postcards */
+.fan {
+  position: relative;
+  height: 14rem;
+  margin: 1.5rem 0 0;
+}
+.postcard {
+  position: absolute;
+  width: 58%;
+  background: #fbf6ee;
+  padding: 0.55rem 0.55rem 0.7rem;
+  border-radius: 6px;
+  box-shadow: 0 10px 24px rgba(42, 28, 30, 0.22);
+  transition: transform 0.4s cubic-bezier(.3, 1.4, .5, 1);
+}
+.postcard .pic {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 3px;
+  object-fit: cover;
+}
+.postcard .cap {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 0.45rem;
+  font-family: var(--serif);
+  font-variation-settings: "SOFT" 100, "opsz" 48;
+  font-size: 1.05rem;
+  color: var(--ink);
+}
+.postcard .cap small { font: 600 0.7rem var(--sans); letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); }
+.postcard.one { left: 2%; top: 1.6rem; transform: rotate(-5deg); z-index: 2; }
+.postcard.two { right: 2%; top: 0.2rem; transform: rotate(6deg); }
+.postcard.two .cap { flex-direction: column; align-items: flex-end; gap: 0.1rem; }
+.postcard .pic.soon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  background: var(--paper-deep);
+  overflow: hidden;
+}
+.pic.soon .blot { inset: 8% 30%; --wash: #b07a1f; --wash-2: #7a2d3a; filter: url(#bleed-sm); }
+.pic.soon .glyph { font-size: 3rem; }
+.door:hover .postcard.one { transform: rotate(-9deg) translate(-4%, -6%); }
+.door:hover .postcard.two { transform: rotate(10deg) translate(4%, 4%); }
+
+/* Projects door: the projects' own little watercolor plates */
+.minis {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  gap: 1.1rem 1.25rem;
+  margin-top: 1.75rem;
+}
+.minis li { display: flex; align-items: center; gap: 0.85rem; }
+.mini {
+  position: relative;
+  flex: none;
+  width: 4.6rem;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  transition: transform 0.4s cubic-bezier(.3, 1.4, .5, 1);
+}
+.mini .blot { inset: 4%; filter: url(#bleed-sm); }
+.mini .glyph { font-size: 2.2rem; }
+.minis strong {
+  display: block;
+  font-family: var(--serif);
+  font-variation-settings: "SOFT" 100, "opsz" 48;
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 1.1;
+}
+.minis div span { display: block; font-size: 0.85rem; color: var(--ink-soft); line-height: 1.35; }
+.door:hover .minis li:nth-child(1) .mini { transform: rotate(-10deg) scale(1.08); }
+.door:hover .minis li:nth-child(2) .mini { transform: rotate(8deg) scale(1.08); transition-delay: 0.05s; }
+.door:hover .minis li:nth-child(3) .mini { transform: rotate(-6deg) scale(1.08); transition-delay: 0.1s; }
+.door:hover .minis li:nth-child(4) .mini { transform: rotate(10deg) scale(1.08); transition-delay: 0.15s; }
+
+@media (max-width: 820px) {
+  .door-grid { grid-template-columns: 1fr; }
+  .door { min-height: 0; padding: 1.75rem 1.5rem; }
+  .postcard { width: 64%; }
+  .postcard .cap { flex-direction: column; gap: 0.1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .door, .door > .blot, .postcard, .mini { transition: none; }
+}

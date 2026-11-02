@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Idea: two doors · RedFox Labs</title>
+  <meta name="robots" content="noindex">
+  <meta name="description"
+    content="RedFox Labs is two brothers making music, games, and the software we wish already existed.">
+  <meta name="theme-color" content="#e9e1d3">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://redfoxlabs.tech/">
+  <meta property="og:title" content="RedFox Labs">
+  <meta property="og:description" content="Two brothers making music, games, and the software we wish already existed.">
+  <meta property="og:image" content="https://redfoxlabs.tech/assets/nine-tailed-fox.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,100;1,9..144,300..700,100&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="doors.css">
+</head>
+
+<body>
+  <div class="mock-label">Idea: the homepage as two doors, Games and Software (see README.md)</div>
+  <!-- Watercolor filters: wobbly pigment edges + paper grain -->
+  <svg class="defs" aria-hidden="true" focusable="false">
+    <filter id="bleed" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="4" seed="7" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="46" xChannelSelector="R" yChannelSelector="G" />
+      <feGaussianBlur stdDeviation="1.4" />
+    </filter>
+    <filter id="bleed-sm" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="3" seed="7" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="12" xChannelSelector="R" yChannelSelector="G" />
+      <feGaussianBlur stdDeviation="0.6" />
+    </filter>
+  </svg>
+
+  <header class="top">
+    <a href="#" class="wordmark">RedFox <span>Labs</span></a>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="../../games/">Games</a>
+      <a href="#us">About us</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Hi. We're <em>RedFox</em>.</h1>
+        <p class="lede">
+          Two brothers who write music, <a href="../../games/">make games</a>, and build the software we wish
+          already existed. Most of it runs on Linux. A lot of it is for musicians.
+          All of it is free and open source.
+        </p>
+        <a href="#projects" class="hero-cta">See what we've made ↓</a>
+      </div>
+      <figure class="hero-fox">
+        <img src="../../assets/nine-tailed-fox.jpg" alt="A nine-tailed fox painted in deep red watercolor" width="896"
+          height="1200">
+      </figure>
+    </section>
+
+    <section id="projects" class="doors">
+      <h2 class="section-title">Things we've made</h2>
+      <div class="door-grid">
+
+        <a class="door" href="../../games/" style="--wash: #3d6f8f; --wash-2: #b5523b;">
+          <span class="blot" aria-hidden="true"></span>
+          <p class="kind">2 games · 1 playable now</p>
+          <h3>Games</h3>
+          <p class="blurb">Air combat in a Great War that went a little differently, and a battle where
+            one player commands from above while everyone else fights in the ranks.</p>
+          <div class="fan" aria-hidden="true">
+            <div class="postcard one">
+              <img class="pic" src="../../assets/sky-barons.jpg" alt="" width="1280" height="720">
+              <div class="cap">Sky Barons <small>Play now</small></div>
+            </div>
+            <div class="postcard two">
+              <div class="pic soon"><span class="blot"></span><span class="glyph">☼</span></div>
+              <div class="cap">Lords of Sola <small>Coming soon</small></div>
+            </div>
+          </div>
+          <span class="more">See the games</span>
+        </a>
+
+        <a class="door" href="../../index.html#projects" style="--wash: #8b1e2d; --wash-2: #c4573a;">
+          <span class="blot" aria-hidden="true"></span>
+          <p class="kind">4 projects · Mostly for Linux</p>
+          <h3>Software</h3>
+          <p class="blurb">The tools we wished already existed, a lot of them for musicians. All free
+            and open source.</p>
+          <ul class="minis" aria-hidden="true">
+            <li><span class="mini" style="--wash: #2f4a7a; --wash-2: #6d5a8c;"><span class="blot"></span><span class="glyph">𝄞</span></span>
+              <div><strong>Torquio</strong><span>Dorico on Linux</span></div></li>
+            <li><span class="mini" style="--wash: #8b1e2d; --wash-2: #c4573a;"><span class="blot"></span><span class="glyph">◆</span></span>
+              <div><strong>RedFox OS</strong><span>Our Linux setup</span></div></li>
+            <li><span class="mini" style="--wash: #c08a2e; --wash-2: #8e3b2f;"><span class="blot"></span><span class="glyph">♪</span></span>
+              <div><strong>Pianola</strong><span>A clean MIDI player</span></div></li>
+            <li><span class="mini" style="--wash: #3f6b58; --wash-2: #d79a3f;"><span class="blot"></span><span class="glyph">30</span></span>
+              <div><strong>Thirties</strong><span>Your day in half hours</span></div></li>
+          </ul>
+          <span class="more">See the software</span>
+        </a>
+
+      </div>
+    </section>
+
+    <section id="us" class="us">
+      <div class="us-inner">
+        <h2 class="section-title">About us</h2>
+        <p>
+          RedFox Labs is Matt and Dewy. We write music and make games, and
+          when we need a tool that doesn't exist yet, we build it. We make these things for
+          ourselves first, then share them in case they help you too.
+        </p>
+        <p>
+          More is on the way: more software, more <a href="../../games/">games</a>, and eventually the music too.
+        </p>
+        <ul class="people">
+          <li><a href="https://github.com/snakeeyes021">Matt <span>@snakeeyes021</span></a></li>
+          <li><a href="https://github.com/david-andrew">Dewy <span>@david-andrew</span></a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>RedFox Labs, LLC</span>
+    <span>redfoxlabs.tech</span>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">Copied</div>
+  <script src="../../script.js"></script>
+</body>
+
+</html>
