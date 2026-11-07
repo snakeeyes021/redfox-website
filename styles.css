@@ -444,6 +444,130 @@ h1 em { color: var(--fox); font-style: italic; }
 }
 .people a:hover { color: #e07a6c; }
 
+/* ---------- Download page ---------- */
+
+.downloads {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 1.5rem 2rem 2rem;
+}
+
+[hidden] { display: none !important; }
+
+.images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+.image {
+  position: relative;
+  padding: 1.75rem 1.75rem 1.5rem;
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--wash) 7%, var(--paper));
+  border: 1px solid color-mix(in srgb, var(--wash) 22%, transparent);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.image h3 {
+  font-family: var(--serif);
+  font-variation-settings: "SOFT" 100, "opsz" 96;
+  font-weight: 500;
+  font-size: 1.7rem;
+  line-height: 1.1;
+  margin-bottom: 0.6rem;
+}
+.image > p:not(.kind):not(.files):not(.badge) { font-size: 0.98rem; }
+.image .get { margin-top: 1.25rem; }
+.files { margin-top: 0.8rem; font-size: 0.85rem; color: var(--ink-soft); }
+.files a { color: var(--ink-soft); }
+.files a:hover { color: var(--fox); }
+
+/* After "Help me choose": the suggested image first and larger. */
+.images.picked { grid-template-columns: 1.6fr 1fr 1fr; }
+.images.picked .image:not(.suggested) { opacity: 0.78; }
+.images.picked .image:not(.suggested) h3 { font-size: 1.35rem; }
+.image.suggested {
+  border: 2px solid var(--wash);
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--wash) 22%, transparent);
+}
+.image.suggested h3 { font-size: 2.2rem; }
+.badge {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  padding: 0.2rem 0.75rem;
+  border-radius: 999px;
+  background: var(--wash);
+  color: #fbf6ee;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.verdict {
+  max-width: 48rem;
+  margin-top: 1.5rem;
+}
+.verdict > p { margin-bottom: 0.75rem; }
+.warn {
+  padding: 0.9rem 1.1rem;
+  border-left: 3px solid #b07a1f;
+  background: color-mix(in srgb, #b07a1f 9%, var(--paper));
+  border-radius: 0 10px 10px 0;
+  font-size: 0.95rem;
+}
+.link {
+  font: 600 0.95rem var(--sans);
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--fox);
+  text-decoration: underline;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+
+.choose {
+  margin-top: 2.25rem;
+  max-width: 48rem;
+  border-top: 1px solid rgba(42, 28, 30, 0.14);
+  padding-top: 1.25rem;
+}
+.choose summary {
+  cursor: pointer;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+}
+.choose summary span { color: var(--fox); font-weight: 600; text-decoration: underline; }
+.choose-body { padding-top: 1rem; }
+.choose-body > p { max-width: 40rem; }
+.choose h4 { margin-top: 1.4rem; font-size: 0.95rem; font-weight: 600; }
+.choose .cmd { margin-top: 0.5rem; }
+.paste { margin-top: 1.75rem; }
+.paste label { display: block; font-weight: 600; font-size: 0.95rem; margin-bottom: 0.4rem; }
+.paste-row { display: flex; gap: 0.75rem; max-width: 40rem; }
+.paste input {
+  flex: 1;
+  min-width: 0;
+  font: 0.9rem var(--mono);
+  padding: 0.65rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid rgba(42, 28, 30, 0.25);
+  background: #f4efe6;
+  color: var(--ink);
+}
+.paste input:focus { outline: 2px solid var(--fox); outline-offset: 1px; }
+.paste .btn { --wash: var(--fox); border: none; font: 600 1rem var(--sans); cursor: pointer; }
+.error { margin-top: 0.6rem; color: var(--fox); font-size: 0.95rem; }
+
+.install-steps {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 5rem;
+}
+.install-steps .section-title { margin-bottom: 1.5rem; }
+.install-steps ol { max-width: 44rem; padding-left: 1.3rem; }
+.install-steps li { margin-bottom: 0.6rem; }
+.install-steps code, .note code { font: 0.85rem var(--mono); }
+
 /* ---------- Footer ---------- */
 
 .foot {
@@ -488,6 +612,7 @@ h1 em { color: var(--fox); font-style: italic; }
   .plate { max-width: 15rem; }
   .glyph { font-size: 4.5rem; }
   .foot { flex-direction: column; }
+  .images, .images.picked { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 480px) {
@@ -498,5 +623,5 @@ h1 em { color: var(--fox); font-style: italic; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .btn, .toast, .deck > *, .game-list a { transition: none; }
+  .btn, .toast, .deck > *, .game-list a, .image { transition: none; }
 }
