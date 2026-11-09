@@ -476,37 +476,43 @@ h1 em { color: var(--fox); font-style: italic; }
   line-height: 1.1;
   margin-bottom: 0.6rem;
 }
-.image > p:not(.kind):not(.files):not(.badge) { font-size: 0.98rem; }
+.image > p:not(.kind):not(.files):not(.not-for):not(.cards-toggle) { font-size: 0.98rem; }
 .image .get { margin-top: 1.25rem; }
+.image .not-for { margin-top: 0.6rem; font-size: 0.88rem; color: var(--ink-soft); }
+.image .cards-toggle { margin-top: 0.6rem; font-size: 0.88rem; }
+.image .cards-toggle .link { font-size: 0.88rem; padding: 0.35rem 0; min-height: 2.75rem; }
+.image .card-list {
+  margin-top: 0.25rem;
+  padding: 0.6rem 0.85rem;
+  border-left: 3px solid var(--ink-soft);
+  background: color-mix(in srgb, var(--ink-soft) 6%, transparent);
+  font-size: 0.88rem;
+}
+.image .card-list ul { list-style: none; margin: 0.3rem 0; padding: 0; }
+.image .card-list li { margin: 0.1rem 0; }
+.image .card-list p:last-child { margin-top: 0.4rem; color: var(--ink-soft); }
 .files { margin-top: 0.8rem; font-size: 0.85rem; color: var(--ink-soft); }
 .files a { color: var(--ink-soft); }
 .files a:hover { color: var(--fox); }
 
-/* After "Help me choose": the suggested image first and larger. */
-.images.picked { grid-template-columns: 1.6fr 1fr 1fr; }
-.images.picked .image:not(.suggested) { opacity: 0.78; }
-.images.picked .image:not(.suggested) h3 { font-size: 1.35rem; }
-.image.suggested {
-  border: 2px solid var(--wash);
-  box-shadow: 0 10px 30px color-mix(in srgb, var(--wash) 22%, transparent);
+
+/* Card colours follow the chip makers: AMD & Intel red and blue, NVIDIA
+   green, older NVIDIA a faded green. */
+.image[data-image="redfox-os"] { --wash: #a3302b; --wash-alt: #2c5c9c; --wash-2: #2c5c9c; }
+.image[data-image="redfox-os-nvidia"] { --wash: #4a7a1c; --wash-2: #76a83a; }
+.image[data-image="redfox-os-nvidia-legacy"] { --wash: #6a8457; --wash-2: #a4b894; }
+.image[data-image="redfox-os"] {
+  border-color: transparent;
+  background:
+    linear-gradient(125deg, color-mix(in srgb, var(--wash) 8%, var(--paper)),
+      color-mix(in srgb, var(--wash-alt) 8%, var(--paper))) padding-box,
+    linear-gradient(125deg, color-mix(in srgb, var(--wash) 30%, transparent),
+      color-mix(in srgb, var(--wash-alt) 30%, transparent)) border-box;
 }
-.image.suggested h3 { font-size: 2.2rem; }
-.badge {
-  display: inline-block;
-  margin-bottom: 0.75rem;
-  padding: 0.2rem 0.75rem;
-  border-radius: 999px;
-  background: var(--wash);
-  color: #fbf6ee;
-  font-size: 0.8rem;
-  font-weight: 600;
+.image[data-image="redfox-os"] .btn {
+  background: linear-gradient(100deg, var(--wash), var(--wash-alt));
 }
 
-.verdict {
-  max-width: 48rem;
-  margin-top: 1.5rem;
-}
-.verdict > p { margin-bottom: 0.75rem; }
 .warn {
   padding: 0.9rem 1.1rem;
   border-left: 3px solid #b07a1f;
@@ -541,21 +547,6 @@ h1 em { color: var(--fox); font-style: italic; }
 .choose-body > p { max-width: 40rem; }
 .choose h4 { margin-top: 1.4rem; font-size: 0.95rem; font-weight: 600; }
 .choose .cmd { margin-top: 0.5rem; }
-.paste { margin-top: 1.75rem; }
-.paste label { display: block; font-weight: 600; font-size: 0.95rem; margin-bottom: 0.4rem; }
-.paste-row { display: flex; gap: 0.75rem; max-width: 40rem; }
-.paste input {
-  flex: 1;
-  min-width: 0;
-  font: 0.9rem var(--mono);
-  padding: 0.65rem 0.9rem;
-  border-radius: 10px;
-  border: 1px solid rgba(42, 28, 30, 0.25);
-  background: #f4efe6;
-  color: var(--ink);
-}
-.paste input:focus { outline: 2px solid var(--fox); outline-offset: 1px; }
-.paste .btn { --wash: var(--fox); border: none; font: 600 1rem var(--sans); cursor: pointer; }
 .error { margin-top: 0.6rem; color: var(--fox); font-size: 0.95rem; }
 
 .install-steps {
@@ -612,7 +603,7 @@ h1 em { color: var(--fox); font-style: italic; }
   .plate { max-width: 15rem; }
   .glyph { font-size: 4.5rem; }
   .foot { flex-direction: column; }
-  .images, .images.picked { grid-template-columns: 1fr; }
+  .images { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 480px) {
