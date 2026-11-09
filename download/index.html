@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download RedFoxOS · RedFox Labs</title>
+  <meta name="description" content="Download RedFoxOS: a live USB image for AMD and Intel graphics, current NVIDIA cards, or older NVIDIA cards.">
+  <meta name="theme-color" content="#e9e1d3">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://redfoxlabs.tech/download/">
+  <meta property="og:title" content="Download RedFoxOS · RedFox Labs">
+  <meta property="og:description" content="Try RedFoxOS from a USB stick, then install it.">
+  <meta property="og:image" content="https://redfoxlabs.tech/assets/nine-tailed-fox.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,100;1,9..144,300..700,100&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+  <svg class="defs" aria-hidden="true" focusable="false">
+    <filter id="bleed" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="4" seed="7" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="46" xChannelSelector="R" yChannelSelector="G" />
+      <feGaussianBlur stdDeviation="1.4" />
+    </filter>
+  </svg>
+
+  <header class="top">
+    <a href="../" class="wordmark">RedFox <span>Labs</span></a>
+    <nav>
+      <a href="../#projects">Projects</a>
+      <a href="../games/">Games</a>
+      <a href="../#us">About us</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-intro">
+      <h1>Download <em>RedFoxOS</em></h1>
+      <p class="lede">
+        Choose your image (based on your graphics setup), write to a USB stick, boot the computer from
+        it, then try/install RedFoxOS.
+      </p>
+    </section>
+
+    <section class="downloads" aria-label="The three images">
+      <div class="images" id="images">
+        <article class="image" data-image="redfox-os">
+          <p class="kind">AMD &amp; Intel graphics</p>
+          <h3>RedFoxOS</h3>
+          <p>For computers with AMD or Intel graphics, built in or on a card.</p>
+          <div class="get">
+            <a class="btn" href="https://download.redfoxlabs.tech/redfox-os.iso">Download</a>
+          </div>
+          <p class="files"><a href="https://download.redfoxlabs.tech/redfox-os.iso-CHECKSUM">SHA-256</a> ·
+            <a href="https://download.redfoxlabs.tech/redfox-os.iso.sig">Signature</a> · about 7 GB</p>
+        </article>
+
+        <article class="image" data-image="redfox-os-nvidia">
+          <p class="kind">NVIDIA · GTX 16xx, RTX 20xx and newer</p>
+          <h3>RedFoxOS NVIDIA</h3>
+          <p>For modern NVIDIA cards. Modern NVIDIA laptops with switchable graphics too.</p>
+          <div class="get">
+            <a class="btn" href="https://download.redfoxlabs.tech/redfox-os-nvidia.iso">Download</a>
+          </div>
+          <p class="files"><a href="https://download.redfoxlabs.tech/redfox-os-nvidia.iso-CHECKSUM">SHA-256</a> ·
+            <a href="https://download.redfoxlabs.tech/redfox-os-nvidia.iso.sig">Signature</a> · about 8 GB</p>
+        </article>
+
+        <article class="image" data-image="redfox-os-nvidia-legacy">
+          <p class="kind">NVIDIA · GTX 10xx, 9xx and 750</p>
+          <h3>RedFoxOS NVIDIA Legacy</h3>
+          <p>For older NVIDIA cards, e.g. GTX 900 and 1000 series cards (excluding 1600 series)</p>
+          <p class="cards-toggle"><button type="button" class="link" aria-expanded="false"
+            aria-controls="legacy-cards">Which cards?</button></p>
+          <div class="card-list" id="legacy-cards" hidden>
+            <p>Supported:</p>
+            <ul>
+              <li>GTX 10XX</li>
+              <li>GTX 9XX</li>
+              <li>GTX 750 Ti</li>
+              <li>GTX 750</li>
+              <li>GTX 745</li>
+            </ul>
+            <p>plus the laptop and workstation versions of these (e.g. GTX 9XXM, MX 1XX, Quadro M/P), and the
+              Titan X, Xp and V</p>
+          </div>
+          <p class="not-for">Not on the list? Unfortunately, NVIDIA's drivers don't support your card any
+            more. Use RedFoxOS (AMD &amp; Intel), which includes open-source nouveau drivers for very old
+            NVIDIA cards.</p>
+          <div class="get">
+            <a class="btn" href="https://download.redfoxlabs.tech/redfox-os-nvidia-legacy.iso">Download</a>
+          </div>
+          <p class="files"><a href="https://download.redfoxlabs.tech/redfox-os-nvidia-legacy.iso-CHECKSUM">SHA-256</a> ·
+            <a href="https://download.redfoxlabs.tech/redfox-os-nvidia-legacy.iso.sig">Signature</a> · about 8 GB</p>
+        </article>
+      </div>
+
+
+      <details class="choose" id="choose">
+        <summary>Not sure which one? <span>Help me choose</span></summary>
+        <div class="choose-body">
+          <p class="choose-intro">On the machine you plan to install RedFoxOS on, run one of these commands. It'll hand you the name of the download that works best for your machine.</p>
+
+          <h4>On Linux, in a terminal</h4>
+          <div class="cmd">
+            <code>curl -sL https://raw.githubusercontent.com/snakeeyes021/redfox-os/main/extras/identify_gpu.sh | bash</code>
+            <button type="button"
+              data-copy="curl -sL https://raw.githubusercontent.com/snakeeyes021/redfox-os/main/extras/identify_gpu.sh | bash">Copy</button>
+          </div>
+
+          <h4>On Windows, in PowerShell</h4>
+          <div class="cmd">
+            <code>irm https://raw.githubusercontent.com/snakeeyes021/redfox-os/main/extras/identify_gpu.ps1 | iex</code>
+            <button type="button"
+              data-copy="irm https://raw.githubusercontent.com/snakeeyes021/redfox-os/main/extras/identify_gpu.ps1 | iex">Copy</button>
+          </div>
+          <p class="note">Want to read them first? <a
+              href="https://github.com/snakeeyes021/redfox-os/blob/main/extras/identify_gpu.sh">identify_gpu.sh</a>,
+            <a href="https://github.com/snakeeyes021/redfox-os/blob/main/extras/identify_gpu.ps1">identify_gpu.ps1</a>.</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="install-steps">
+      <h2 class="section-title">Then</h2>
+      <ol>
+        <li>Write the image to a USB stick of 16 GB or more with
+          <a href="https://flathub.org/apps/org.fedoraproject.MediaWriter">Fedora Media Writer</a> or
+          <a href="https://etcher.balena.io/">balenaEtcher</a>. Everything on the stick is erased.</li>
+        <li>Start the computer from the stick (often F12, F11 or Esc at power-on). It needs UEFI, not
+          legacy/CSM mode.</li>
+        <li>Choose <em>Install RedFoxOS</em>, pick the disk, and create your account.</li>
+        <li>Restart. With Secure Boot on, a blue screen asks once to enrol a key: <em>Enroll MOK</em>,
+          <em>Continue</em>, <em>Yes</em>, password <code>universalblue</code>, <em>Reboot</em>.</li>
+        <li>RedFox installs a small set of core apps in the background on first boot, once you're online.</li>
+      </ol>
+      <p class="note">These are the stable images. For the unstable channel, simply switch to unstable in
+        RedFox Hub after installation. Already on Bazzite or Bluefin (GNOME)? You can
+        <a href="https://github.com/snakeeyes021/redfox-os#installation">rebase</a> instead.</p>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>RedFoxOS is free and open source. <a href="https://github.com/snakeeyes021/redfox-os">Source on GitHub</a>.</p>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="../script.js"></script>
+  <script src="choose.js"></script>
+</body>
+
+</html>

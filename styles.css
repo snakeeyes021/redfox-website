@@ -444,6 +444,121 @@ h1 em { color: var(--fox); font-style: italic; }
 }
 .people a:hover { color: #e07a6c; }
 
+/* ---------- Download page ---------- */
+
+.downloads {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 1.5rem 2rem 2rem;
+}
+
+[hidden] { display: none !important; }
+
+.images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+.image {
+  position: relative;
+  padding: 1.75rem 1.75rem 1.5rem;
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--wash) 7%, var(--paper));
+  border: 1px solid color-mix(in srgb, var(--wash) 22%, transparent);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.image h3 {
+  font-family: var(--serif);
+  font-variation-settings: "SOFT" 100, "opsz" 96;
+  font-weight: 500;
+  font-size: 1.7rem;
+  line-height: 1.1;
+  margin-bottom: 0.6rem;
+}
+.image > p:not(.kind):not(.files):not(.not-for):not(.cards-toggle) { font-size: 0.98rem; }
+.image .get { margin-top: 1.25rem; }
+.image .not-for { margin-top: 0.6rem; font-size: 0.88rem; color: var(--ink-soft); }
+.image .cards-toggle { margin-top: 0.6rem; font-size: 0.88rem; }
+.image .cards-toggle .link { font-size: 0.88rem; padding: 0.35rem 0; min-height: 2.75rem; }
+.image .card-list {
+  margin-top: 0.25rem;
+  padding: 0.6rem 0.85rem;
+  border-left: 3px solid var(--ink-soft);
+  background: color-mix(in srgb, var(--ink-soft) 6%, transparent);
+  font-size: 0.88rem;
+}
+.image .card-list ul { list-style: none; margin: 0.3rem 0; padding: 0; }
+.image .card-list li { margin: 0.1rem 0; }
+.image .card-list p:last-child { margin-top: 0.4rem; color: var(--ink-soft); }
+.files { margin-top: 0.8rem; font-size: 0.85rem; color: var(--ink-soft); }
+.files a { color: var(--ink-soft); }
+.files a:hover { color: var(--fox); }
+
+
+/* Card colours follow the chip makers: AMD & Intel red and blue, NVIDIA
+   green, older NVIDIA a faded green. */
+.image[data-image="redfox-os"] { --wash: #a3302b; --wash-alt: #2c5c9c; --wash-2: #2c5c9c; }
+.image[data-image="redfox-os-nvidia"] { --wash: #4a7a1c; --wash-2: #76a83a; }
+.image[data-image="redfox-os-nvidia-legacy"] { --wash: #6a8457; --wash-2: #a4b894; }
+.image[data-image="redfox-os"] {
+  border-color: transparent;
+  background:
+    linear-gradient(125deg, color-mix(in srgb, var(--wash) 8%, var(--paper)),
+      color-mix(in srgb, var(--wash-alt) 8%, var(--paper))) padding-box,
+    linear-gradient(125deg, color-mix(in srgb, var(--wash) 30%, transparent),
+      color-mix(in srgb, var(--wash-alt) 30%, transparent)) border-box;
+}
+.image[data-image="redfox-os"] .btn {
+  background: linear-gradient(100deg, var(--wash), var(--wash-alt));
+}
+
+.warn {
+  padding: 0.9rem 1.1rem;
+  border-left: 3px solid #b07a1f;
+  background: color-mix(in srgb, #b07a1f 9%, var(--paper));
+  border-radius: 0 10px 10px 0;
+  font-size: 0.95rem;
+}
+.link {
+  font: 600 0.95rem var(--sans);
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--fox);
+  text-decoration: underline;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+
+.choose {
+  margin-top: 2.25rem;
+  max-width: 48rem;
+  border-top: 1px solid rgba(42, 28, 30, 0.14);
+  padding-top: 1.25rem;
+}
+.choose summary {
+  cursor: pointer;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+}
+.choose summary span { color: var(--fox); font-weight: 600; text-decoration: underline; }
+.choose-body { padding-top: 1rem; }
+.choose-body > p { max-width: 40rem; }
+.choose h4 { margin-top: 1.4rem; font-size: 0.95rem; font-weight: 600; }
+.choose .cmd { margin-top: 0.5rem; }
+.error { margin-top: 0.6rem; color: var(--fox); font-size: 0.95rem; }
+
+.install-steps {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 5rem;
+}
+.install-steps .section-title { margin-bottom: 1.5rem; }
+.install-steps ol { max-width: 44rem; padding-left: 1.3rem; }
+.install-steps li { margin-bottom: 0.6rem; }
+.install-steps code, .note code { font: 0.85rem var(--mono); }
+
 /* ---------- Footer ---------- */
 
 .foot {
@@ -488,6 +603,7 @@ h1 em { color: var(--fox); font-style: italic; }
   .plate { max-width: 15rem; }
   .glyph { font-size: 4.5rem; }
   .foot { flex-direction: column; }
+  .images { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 480px) {
@@ -498,5 +614,5 @@ h1 em { color: var(--fox); font-style: italic; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .btn, .toast, .deck > *, .game-list a { transition: none; }
+  .btn, .toast, .deck > *, .game-list a, .image { transition: none; }
 }
