@@ -513,6 +513,15 @@ h1 em { color: var(--fox); font-style: italic; }
   background: linear-gradient(100deg, var(--wash), var(--wash-alt));
 }
 
+/* The graphics helpers link to the card they recommend
+   (download/#redfox-os-nvidia and so on): that card gets a ring in its own
+   colour and the others fade back. Without an anchor, nothing changes. */
+.image { scroll-margin-top: 2rem; }
+.image:target {
+  box-shadow: 0 0 0 3px var(--wash), 0 12px 32px -12px color-mix(in srgb, var(--wash) 55%, transparent);
+}
+.images:has(.image:target) .image:not(:target) { opacity: 0.55; }
+
 .warn {
   padding: 0.9rem 1.1rem;
   border-left: 3px solid #b07a1f;
