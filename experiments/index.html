@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experiments · RedFox Labs</title>
+  <meta name="description" content="Thirties and Lords of Sola, from RedFox Labs.">
+  <meta name="theme-color" content="#e9e1d3">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://redfoxlabs.tech/experiments/">
+  <meta property="og:title" content="Experiments · RedFox Labs">
+  <meta property="og:description" content="Thirties and Lords of Sola, from RedFox Labs.">
+  <meta property="og:image" content="https://redfoxlabs.tech/assets/lords-of-sola.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,100;1,9..144,300..700,100&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+  <!-- Watercolor filters: wobbly pigment edges + paper grain -->
+  <svg class="defs" aria-hidden="true" focusable="false">
+    <filter id="bleed" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="4" seed="7" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="46" xChannelSelector="R" yChannelSelector="G" />
+      <feGaussianBlur stdDeviation="1.4" />
+    </filter>
+  </svg>
+
+  <header class="top">
+    <a href="../" class="wordmark">RedFox <span>Labs</span></a>
+    <nav>
+      <a href="../#projects">Projects</a>
+      <a href="../games/">Games</a>
+      <a href="../#us">About us</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-intro">
+      <h1><em>Experiments</em></h1>
+    </section>
+
+    <section class="projects experiments">
+      <article class="project" id="thirties" style="--wash: #3f6b58; --wash-2: #d79a3f;">
+        <div class="plate" aria-hidden="true"><span class="blot"></span><span class="glyph">30</span></div>
+        <div class="project-body">
+          <p class="kind">Personal assistant · Day planner</p>
+          <h3>Thirties</h3>
+          <p>
+            Humans naturally live in half-hour chunks. If alien anthropologists studied us without
+            knowing about clocks, they'd decide our unit of time was thirty minutes. Thirties starts
+            there: it lays your day out as "thirties" between sunrise and sunset. Clock times play
+            second fiddle.
+          </p>
+          <p>
+            You plan the day with it in plain conversation. It keeps your to-do list and schedule,
+            moves only what needs moving when plans gang aft agley, helps with long-term planning,
+            and can text you on Telegram. Think of it as the off-gridder's Siri. It's heading toward
+            running entirely on your own machine.
+          </p>
+          <div class="get">
+            <a class="btn" href="https://github.com/snakeeyes021/thirties/releases/latest">Get the Flatpak</a>
+            <span class="or">or install it from <a href="../#redfox-os">RedFoxOS</a></span>
+          </div>
+          <p class="note">Early alpha. Expect rough edges.</p>
+        </div>
+      </article>
+
+      <article class="project" id="lords-of-sola" style="--wash: #b07a1f; --wash-2: #7a2d3a;">
+        <div class="plate" aria-hidden="true"><span class="blot"></span><span class="glyph">☼</span></div>
+        <div class="project-body">
+          <p class="kind">Strategy and action · Coming soon</p>
+          <h3>Lords of Sola</h3>
+          <p>
+            Still in the making. Sola is a hollow world with its sun inside. Where that light breaks
+            up through the crust are the Sunwells, rich in sunsilver, and seven very different peoples
+            fight over them. Everywhere else lies in the Dim, a long twilight under glowing moons, and
+            the only way through it is to carry light: lanterns and beacons that burn sunsilver, and a
+            light carrier in every squad.
+          </p>
+          <p>
+            Each team has one commander, playing a real-time strategy game from above, while everyone
+            else fights on the ground in the commander's squads. The seat can change hands at any
+            time. And if it's a person, it can be played: a soldier, a porter, a builder, a healer, a
+            light-bearer, or the crew of a war wagon, a siege tower or a war galley. Bots fill any seat
+            nobody's in.
+          </p>
+          <p>
+            Everything has a cost, and everything has to be moved, planned for and protected.
+            Sunsilver, provisions and materials travel by cart and caravan along roads the commander
+            builds, carts get raided, and an army that runs out of food deserts.
+          </p>
+          <p>
+            There are two ages to fight in: the Age of Lanterns, with blades, bows and beasts, and the
+            Age of Stars, where rifles are cheap and armoured melee is the rare elite. Nine maps, for
+            two, four or eight teams, and it's built for battles of up to 128 players.
+          </p>
+          <figure class="shot">
+            <img src="../assets/lords-of-sola.jpg"
+              alt="The commander's view from above: a team's keep, the roads out of it, and squads with their lamps in the dark"
+              width="1280" height="720" loading="lazy">
+          </figure>
+          <p class="note">Not playable yet. We'll put it here once we've played it enough to be happy with it.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>RedFox Labs, LLC</span>
+    <a href="../experiments/" aria-current="page">Experiments</a>
+    <span>redfoxlabs.tech</span>
+  </footer>
+</body>
+
+</html>

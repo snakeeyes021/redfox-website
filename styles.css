@@ -292,15 +292,9 @@ h1 em { color: var(--fox); font-style: italic; }
 
 .games { padding-top: 0; }
 
-/* Things we're not happy with yet, after the main list */
+/* The Experiments page: things we're not happy with yet, linked only from
+   the footer */
 .experiments { padding-top: 0; }
-.experiments .experiment-list {
-  max-width: none;
-  margin-top: 0;
-  padding-top: 2.5rem;
-  border-top: 1px solid rgba(42, 28, 30, 0.14);
-}
-.experiment-list li { max-width: 36rem; }
 
 /* A game's own icon, sitting in the wash */
 .plate .icon {
@@ -595,6 +589,7 @@ h1 em { color: var(--fox); font-style: italic; }
   padding: 1.5rem 2rem 2rem;
   border-top: 1px solid rgba(233, 223, 210, 0.08);
 }
+.foot a:hover { color: #e9dfd2; }
 
 /* ---------- Toast ---------- */
 
